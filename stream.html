@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404: Not Found</title>
+    <!-- add css file in flask application -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+</head>
+
+<body>
+    <div class="content">
+        <strong>Welcome to Remote Rpi Car Controller!</strong>
+        <h5>It {{date.strftime("%A, %d %B, %Y at %X")}}.</h5>
+        <img src="{{url_for('video_feed')}}">
+        <form method="POST">
+            <button class="button" style="display: block; margin: auto;" name="UP" type="submit">UP</button>
+            <button class="button" name="LEFT" type="submit">LEFT</button>
+            <button class="button" name="DOWN" type="submit">DOWN</button>
+            <button class="button" name="RIGHT" type="submit">RIGHT</button>
+        </form>
+        <iframe style="margin: 10px;" src="{{url_for('alert')}}"></iframe>
+    </div>
+</body>
+
+</html>
